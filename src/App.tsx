@@ -2,13 +2,14 @@ import './App.css';
 
 import React, {FormEvent, useEffect, useState} from 'react';
 
+import { IFilms } from './IFilms'
 import logo from './logo.svg';
 
 function App() {
-  const [resultsFound, setResultsFound] = useState([]);
+  const [resultsFound, setResultsFound] = useState<IFilms[]>([]);
   const [searchSkywalker, setSearchSkywalker] = useState('');
 
-  const searchResults = async (query: string): Promise<any> => {
+  const searchResults = async (query: string): Promise<IFilms[]> => {
     const result = await fetch(`https://swapi.dev/api/films?search=${query}`)
     return (await result.json()).results
   }
