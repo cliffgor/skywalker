@@ -5,5 +5,6 @@ export interface IFilms {
     director: string;
     producer: string
     release_date: string;
+    characters:string;
 
 }

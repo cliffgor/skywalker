@@ -2,6 +2,7 @@ import './App.css';
 
 import React, {FormEvent, useEffect, useState} from 'react';
 
+import FilmsComponent from './FilmsComponent';
 import { IFilms } from './IFilms'
 import logo from './logo.svg';
 
@@ -38,6 +39,14 @@ useEffect(() => {
         <input id="searchText" type="text" />
         <button>Search </button>
       </form>
+       {searchSkywalker && <p> Results for {searchSkywalker}...</p>}
+
+       <div className="films-container">
+         {resultsFound.length && 
+          resultsFound.map(films =>
+          (<FilmsComponent key={films.title} films={films}></FilmsComponent>)
+          )}
+       </div>
     </div>
   );
 }
