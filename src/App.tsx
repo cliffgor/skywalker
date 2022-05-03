@@ -4,7 +4,6 @@ import React, {FormEvent, useEffect, useState} from 'react';
 
 import FilmsComponent from './FilmsComponent';
 import { IFilms } from './IFilms'
-import logo from './logo.svg';
 
 function App() {
   const [resultsFound, setResultsFound] = useState<IFilms[]>([]);
